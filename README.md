@@ -1,7 +1,8 @@
 # Gerador de Card - ParticipAção e InovAção CCNT
+- Acesse em [jhermesn.dev/participacaoeinovacaoccnt](https://jhermesn.dev/participacaoeinovacaoccnt).
 
 ## 📋 Sobre
-Gerador de cards para a campanha "ParticipAção e InovAção" do CCNT. Permite aos usuários criar cards personalizados com sua foto e seu nome.
+Gerador de cards para a campanha ParticipAção e InovAção do CCNT. Permite aos usuários criar cards personalizados com sua foto e seu nome.
 
 ## ✨ Funcionalidades
 - 📸 Upload e posicionamento de foto
