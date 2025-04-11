@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapa 1 - CCNT | Gerador de Card</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="background"></div>
+<div class="container">
+    <div class="card-container">
+        <h1>ParticipAção e InovAção - CCNT</h1>
+
+        <div class="card-generator">
+            <div class="input-section">
+                <div class="form-group">
+                    <label for="name">Seu Nome:</label>
+                    <input type="text" id="name" placeholder="Digite o seu nome" maxlength="30">
+                </div>
+
+                <div class="form-group">
+                    <label for="photo">Sua Foto:</label>
+                    <div class="file-input-wrapper">
+                        <button class="file-input-button">Escolha uma foto</button>
+                        <input type="file" id="photo" accept="image/*">
+                        <span id="file-name">Nenhuma imagem escolhida.</span>
+                    </div>
+                </div>
+
+                <div class="instructions">
+                    <p><strong>Instruções:</strong></p>
+                    <p>1. Digite o seu nome.</p>
+                    <p>2. Selecione sua foto.</p>
+                    <p>3. Use os botões '+' e '-' para encaixar sua foto corretamente.</p>
+                    <p>4. Arraste a foto para reposicioná-la.</p>
+                    <p>5. Aperte "Baixar Card" quando estiver pronto.</p>
+                    <p>6. Dia 23, vote Chapa 1 para o CCNT. ParticipAção e InovAção!</p>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <h2>Visualização</h2>
+                <div class="zoom-controls">
+                    <label>Zoom:</label>
+                    <div class="zoom-buttons">
+                        <button id="zoom-out" class="zoom-btn" disabled>-</button>
+                        <span id="zoom-level">Selecione uma imagem</span>
+                        <button id="zoom-in" class="zoom-btn" disabled>+</button>
+                    </div>
+                </div>
+                <div class="canvas-container">
+                    <canvas id="preview-canvas" width="800" height="800"></canvas>
+                </div>
+                <div class="buttons">
+                    <button id="download-btn" class="primary-btn" disabled>Baixar Card</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer style="text-align: center; margin-top: 2rem; padding: 1rem; background-color: #f8f8f8; border-top: 1px solid #e0e0e0;">
+    <p>Desenvolvido por <a href="https://jhermesn.dev/pt-BR/" target="_blank" style="color: #0099cc; text-decoration: none;">Jorge Hermes</a> © 2025</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
