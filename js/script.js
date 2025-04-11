@@ -273,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function shareOnWhatsApp() {
     const downloadBtn = document.getElementById("download-btn");
     const shareText = "Crie seu card personalizado para apoiar a Chapa 1 na eleição do CCNT!";
-    const shareUrl = "https://jhermesn.github.io/participacaoeinovacaoccnt/";
+    const shareUrl = "https://jhermesn.dev/participacaoeinovacaoccnt/";
 
     if (!downloadBtn.disabled) {
         const name = document.getElementById("name").value.trim();
