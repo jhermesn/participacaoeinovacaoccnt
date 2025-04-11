@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const nameInput = document.getElementById("name")
+    const captionInput = document.getElementById("caption")
     const photoInput = document.getElementById("photo")
     const fileNameSpan = document.getElementById("file-name")
     const downloadBtn = document.getElementById("download-btn")
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     photoInput.addEventListener("change", handlePhotoUpload)
     nameInput.addEventListener("input", drawCanvas)
+    captionInput.addEventListener("input", drawCanvas)
     downloadBtn.addEventListener("click", downloadCard)
     zoomInBtn.addEventListener("click", zoomIn)
     zoomOutBtn.addEventListener("click", zoomOut)
@@ -224,13 +226,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const name = nameInput.value.trim()
         if (name) {
-            ctx.fillStyle = "white"
-            ctx.font = "bold 36px Arial"
+            ctx.fillStyle = "#001e81"
+            ctx.font = "900 36px 'neulis-neue', sans-serif"
             ctx.textAlign = "center"
             ctx.textBaseline = "middle"
 
             const textY = canvas.height * 0.87
-            ctx.fillText(name, canvas.width / 2, textY, canvas.width * 0.7)
+            ctx.fillText(name, canvas.width / 2, textY, canvas.width * 0.8)
+
+            const caption = captionInput.value.trim()
+            if (caption) {
+                ctx.fillStyle = "#001e81"
+                ctx.font = "italic 900 24px 'neulis-neue', sans-serif"
+                ctx.textAlign = "center"
+                ctx.textBaseline = "middle"
+
+                const captionY = canvas.height * 0.96
+                ctx.fillText(caption, canvas.width / 2, captionY, canvas.width * 0.8)
+            }
         }
 
         downloadBtn.disabled = !userPhoto
@@ -256,3 +269,32 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
 })
+
+function shareOnWhatsApp() {
+    const downloadBtn = document.getElementById("download-btn");
+    const shareText = "Crie seu card personalizado para apoiar a Chapa 1 na eleição do CCNT!";
+    const shareUrl = "https://jhermesn.github.io/participacaoeinovacaoccnt/";
+
+    if (!downloadBtn.disabled) {
+        const name = document.getElementById("name").value.trim();
+        const sanitizedName = name.replace(/\s+/g, "");
+        const fileName = `CCNT_Chapa1_${sanitizedName}.png`;
+
+        const canvas = document.getElementById("preview-canvas");
+
+        const link = document.createElement("a");
+        link.download = fileName;
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+
+        setTimeout(() => {
+            alert("Seu card foi baixado. Na próxima tela do WhatsApp, anexe a imagem que acabou de ser salva.");
+
+            const message = `${shareText} ${shareUrl}\n\nAcabei de criar meu card personalizado para apoiar a Chapa 1 na eleição do CCNT!`;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`, "_blank");
+        }, 500);
+    } else {
+        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + " " + shareUrl)}`;
+        window.open(whatsappUrl, "_blank");
+    }
+}

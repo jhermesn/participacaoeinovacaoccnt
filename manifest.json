@@ -1,0 +1,17 @@
+{
+  "name": "ParticipAção e InovAção CCNT - Gerador de Card",
+  "short_name": "Card Chapa 1",
+  "description": "Crie seu card personalizado para apoiar a Chapa 1 na eleição CCNT",
+  "start_url": "index.html",
+    "scope": "/participacaoeinovacaoccnt/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0099cc",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "540x540",
+      "type": "image/png"
+    }
+  ]
+}

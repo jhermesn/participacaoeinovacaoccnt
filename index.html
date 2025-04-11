@@ -1,10 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapa 1 - CCNT | Gerador de Card</title>
+    <title>ParticipAção e InovAção (Chapa 1) - CCNT | Gerador de Card</title>
+
+    <meta name="description" content="Crie seu card personalizado para a campanha ParticipAção e InovAção do CCNT. Adicione sua foto e nome para apoiar a Chapa 1.">
+    <meta name="keywords" content="CCNT, chapa 1, participação, inovação, card generator, eleição CCNT">
+    <meta name="author" content="Jorge Hermes">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jhermesn.github.io/participacaoeinovacaoccnt/">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jhermesn.github.io/participacaoeinovacaoccnt/">
+    <meta property="og:title" content="Crie seu card para a campanha ParticipAção e InovAção CCNT">
+    <meta property="og:description" content="Personalize e compartilhe seu apoio à Chapa 1 CCNT com este gerador de cards.">
+    <meta property="og:image" content="https://jhermesn.github.io/participacaoeinovacaoccnt/img/social-preview.png">
+    <meta property="og:image:alt" content="Card da campanha ParticipAção e InovAção CCNT">
+    <meta property="og:site_name" content="ParticipAção e InovAção CCNT">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://jhermesn.github.io/participacaoeinovacaoccnt/">
+    <meta name="twitter:title" content="Crie seu card para a campanha ParticipAção e InovAção CCNT">
+    <meta name="twitter:description" content="Personalize e compartilhe seu apoio à Chapa 1 CCNT com este gerador de cards.">
+    <meta name="twitter:image" content="https://jhermesn.github.io/participacaoeinovacaoccnt/img/social-preview.png">
+
+    <meta property="og:image:width" content="1440">
+    <meta property="og:image:height" content="1800">
+    <meta property="og:locale" content="pt_BR">
+
+    <meta name="format-detection" content="telephone=no">
+
+    <meta name="geo.region" content="BR">
+    <meta name="application-name" content="Card Chapa 1 CCNT">
+
+    <meta name="pinterest" content="nopin" description="Crie seu próprio card no nosso site em vez de pinnar esta imagem!" />
+
+    <link rel="dns-prefetch" href="//whatsapp.com">
+    <link rel="dns-prefetch" href="//facebook.com">
+    <link rel="dns-prefetch" href="//instagram.com">
+
+    <meta name="theme-color" content="#0099cc">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+
     <link rel="stylesheet" href="css/styles.css">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Gerador de Card - ParticipAção e InovAção CCNT",
+            "description": "Ferramenta para criar cards personalizados para a campanha ParticipAção e InovAção do CCNT",
+            "applicationCategory": "Image Generator",
+            "operatingSystem": "Any",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "BRL"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Jorge Hermes",
+                "url": "https://jhermesn.dev/pt-BR/"
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="background"></div>
@@ -17,6 +85,8 @@
                 <div class="form-group">
                     <label for="name">Seu Nome:</label>
                     <input type="text" id="name" placeholder="Digite o seu nome" maxlength="30">
+                    <label for="caption">Legenda:</label>
+                    <input type="text" id="caption" placeholder="Digite uma legenda (opcional)" maxlength="40">
                 </div>
 
                 <div class="form-group">
@@ -31,11 +101,12 @@
                 <div class="instructions">
                     <p><strong>Instruções:</strong></p>
                     <p>1. Digite o seu nome.</p>
-                    <p>2. Selecione sua foto.</p>
-                    <p>3. Use os botões '+' e '-' para encaixar sua foto corretamente.</p>
-                    <p>4. Arraste a foto para reposicioná-la.</p>
-                    <p>5. Aperte "Baixar Card" quando estiver pronto.</p>
-                    <p>6. Dia 23, vote Chapa 1 para o CCNT. ParticipAção e InovAção!</p>
+                    <p>2. Adicione uma legenda (opcional).</p>
+                    <p>3. Selecione sua foto.</p>
+                    <p>4. Use os botões '+' e '-' para encaixar a sua foto corretamente.</p>
+                    <p>5. Arraste a foto para reposicioná-la.</p>
+                    <p>6. Aperte "Baixar Card" quando estiver pronto.</p>
+                    <p>7. Dia 23 de Abril, vote Chapa 1 para o CCNT. ParticipAção e InovAção!</p>
                 </div>
             </div>
 
@@ -54,14 +125,17 @@
                 </div>
                 <div class="buttons">
                     <button id="download-btn" class="primary-btn" disabled>Baixar Card</button>
+                    <button id="share-btn" class="share-btn" onclick="shareOnWhatsApp()">
+                        Compartilhar no WhatsApp
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<footer style="text-align: center; margin-top: 2rem; padding: 1rem; background-color: #f8f8f8; border-top: 1px solid #e0e0e0;">
-    <p>Desenvolvido por <a href="https://jhermesn.dev/pt-BR/" target="_blank" style="color: #0099cc; text-decoration: none;">Jorge Hermes</a> © 2025</p>
+<footer>
+    <p>Desenvolvido por <a href="https://jhermesn.dev/pt-BR/" target="_blank">Jorge Hermes</a> © 2025</p>
 </footer>
 
 <script src="js/script.js"></script>
